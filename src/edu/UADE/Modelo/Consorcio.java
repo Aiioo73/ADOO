@@ -1,16 +1,18 @@
 package edu.UADE.Modelo;
 
+import java.util.ArrayList;
+
 public class Consorcio {
-    private cuentaBancaria CuentaBancaria;
-    private list<unidadesFuncionales> unidadFuncional;
-    private criterio Criterios;
-    private list<gastos> gasto;
+    private CuentaBancaria cuentaBancaria;
+    private ArrayList<UnidadesFuncionales> unidadFuncional;
+    private Criterios criterios;
+    private ArrayList<Gasto> gasto;
 
     public void calcularExpensasXUnidadFuncional(){
 
     }
 
-    public void cambioCriterio(Criterio Criterios){
+    public void cambioCriterio(Criterios criterios){
 
     }
 

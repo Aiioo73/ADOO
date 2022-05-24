@@ -1,9 +1,11 @@
 package edu.UADE.Modelo;
 
-public class AdministradorDeConsoricio {
-    private list<Consorcio> listadoConsorcio;
+import java.util.ArrayList;
 
-    public void confirmarPagoUnidadFuncional(unidadFuncional unidadesFuncionales){
+public class AdministradorDeConsoricio {
+    private ArrayList<Consorcio> listadoConsorcio;
+
+    public void confirmarPagoUnidadFuncional(UnidadesFuncionales unidadesFuncionales){
 
     }
 

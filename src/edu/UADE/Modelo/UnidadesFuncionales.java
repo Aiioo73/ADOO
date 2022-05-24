@@ -1,9 +1,11 @@
 package edu.UADE.Modelo;
 
+import java.util.ArrayList;
+
 public class UnidadesFuncionales {
     private double porcentajeTotalPagar;
-    private list<Persona> inquilinos;
-    private list<Persona> propietarios;
+    private ArrayList<Persona> inquilinos;
+    private ArrayList<Persona> propietarios;
     private Double deudaPeriodoAnterior;
     private TipoUnidad tipoUnidad;
 
