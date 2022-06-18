@@ -8,6 +8,13 @@ public class Consorcio {
     private Criterios criterios;
     private ArrayList<Gasto> gasto;
 
+    public Consorcio(CuentaBancaria cuentaBancaria, ArrayList<UnidadesFuncionales> unidadFuncional, Criterios criterios, ArrayList<Gasto> gasto) {
+        this.cuentaBancaria = cuentaBancaria;
+        this.unidadFuncional = unidadFuncional;
+        this.criterios = criterios;
+        this.gasto = gasto;
+    }
+
     public void calcularExpensasXUnidadFuncional(){
 
     }

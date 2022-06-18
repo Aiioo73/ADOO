@@ -8,10 +8,37 @@ public class UnidadesFuncionales {
     private ArrayList<Persona> propietarios;
     private Double deudaPeriodoAnterior;
     private TipoUnidad tipoUnidad;
+    private Double metrosCuadrados;
 
-    public void calcularMetrosCuadrados(){
-
+    public UnidadesFuncionales(double porcentajeTotalPagar, ArrayList<Persona> inquilinos, ArrayList<Persona> propietarios, Double deudaPeriodoAnterior, TipoUnidad tipoUnidad, Double metrosCuadrados) {
+        this.porcentajeTotalPagar = porcentajeTotalPagar;
+        this.inquilinos = inquilinos;
+        this.propietarios = propietarios;
+        this.deudaPeriodoAnterior = deudaPeriodoAnterior;
+        this.tipoUnidad = tipoUnidad;
     }
 
+    public double getPorcentajeTotalPagar() {
+        return porcentajeTotalPagar;
+    }
 
+    public ArrayList<Persona> getInquilinos() {
+        return inquilinos;
+    }
+
+    public ArrayList<Persona> getPropietarios() {
+        return propietarios;
+    }
+
+    public Double getDeudaPeriodoAnterior() {
+        return deudaPeriodoAnterior;
+    }
+
+    public TipoUnidad getTipoUnidad() {
+        return tipoUnidad;
+    }
+
+    public Double getMetrosCuadrados() {
+        return metrosCuadrados;
+    }
 }

@@ -7,4 +7,21 @@ public class Notificaciones {
     private Expensa mensajeExpensa;
     private int nroTelefonoDestinatario;
 
+    public Notificaciones(String emailDestinatario, Expensa mensajeExpensa, int nroTelefonoDestinatario) {
+        this.emailDestinatario = emailDestinatario;
+        this.mensajeExpensa = mensajeExpensa;
+        this.nroTelefonoDestinatario = nroTelefonoDestinatario;
+    }
+
+    public String getEmailDestinatario() {
+        return emailDestinatario;
+    }
+
+    public Expensa getMensajeExpensa() {
+        return mensajeExpensa;
+    }
+
+    public int getNroTelefonoDestinatario() {
+        return nroTelefonoDestinatario;
+    }
 }
