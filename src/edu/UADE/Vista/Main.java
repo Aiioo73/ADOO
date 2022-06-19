@@ -21,9 +21,9 @@ public class Main {
 
 
         //Creo Expensas
-        Expensa Luz = new Expensa(objDate, 1500, 0);
-        Expensa Gas = new Expensa(objDate, 300, 0);
-        Expensa Calefon = new Expensa(objDate, 0, 1200);
+        Expensa Luz = new Expensa(objDate, "Luz",1500, 0);
+        Expensa Gas = new Expensa(objDate, "Gas",300, 0);
+        Expensa Calefon = new Expensa(objDate, "Calefon",0, 1200);
 
         //Creo Unidades Funcionales
         UnidadesFuncionales Depto1 = new UnidadesFuncionales(TipoUnidad.departamento, TipoUsuario.DUENO, 23.2, false, 20.0, 0.0);
@@ -37,9 +37,9 @@ public class Main {
                 309877662,128020,"HolaSusana",objDate);
 
         //Creo Gastos
-        Gasto luz = new Gasto(2121,Luz,true);
-        Gasto gas = new Gasto(1400,Gas,true);
-        Gasto calefon = new Gasto(1400,Calefon,true);
+        Gasto luz = new Gasto(Luz,true);
+        Gasto gas = new Gasto(Gas,true);
+        Gasto calefon = new Gasto(Calefon,true);
 
         //Creo Criterios
 
