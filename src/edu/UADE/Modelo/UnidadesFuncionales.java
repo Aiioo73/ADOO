@@ -1,33 +1,36 @@
 package edu.UADE.Modelo;
 
-import java.util.ArrayList;
-
 public class UnidadesFuncionales {
     private double porcentajeTotalPagar;
-    private ArrayList<Persona> inquilinos;
-    private ArrayList<Persona> propietarios;
-    private Double deudaPeriodoAnterior;
     private TipoUnidad tipoUnidad;
+    private TipoUsuario tipoUsuario;
+    private Double deudaPeriodoAnterior;
     private Double metrosCuadrados;
+    private boolean alquilado;
 
-    public UnidadesFuncionales(double porcentajeTotalPagar, ArrayList<Persona> inquilinos, ArrayList<Persona> propietarios, Double deudaPeriodoAnterior, TipoUnidad tipoUnidad, Double metrosCuadrados) {
-        this.porcentajeTotalPagar = porcentajeTotalPagar;
-        this.inquilinos = inquilinos;
-        this.propietarios = propietarios;
-        this.deudaPeriodoAnterior = deudaPeriodoAnterior;
+    public UnidadesFuncionales(TipoUnidad tipoUnidad,TipoUsuario tipoUsuario, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
+                               double deudaPeriodoAnterior) {
+
         this.tipoUnidad = tipoUnidad;
+        this.porcentajeTotalPagar = porcentajeTotalPagar;
+        this.deudaPeriodoAnterior = deudaPeriodoAnterior;
+        this.tipoUsuario = TipoUsuario.DUENO;
+        this.alquilado = alquilado;
+
+    }
+
+    public void tieneAlquiler(){
+        if (alquilado == true){
+            TipoUsuario inquilino = TipoUsuario.INQUILINO;
+        }
+    }
+
+    public void calcularMetrosCuadrados(){
+
     }
 
     public double getPorcentajeTotalPagar() {
         return porcentajeTotalPagar;
-    }
-
-    public ArrayList<Persona> getInquilinos() {
-        return inquilinos;
-    }
-
-    public ArrayList<Persona> getPropietarios() {
-        return propietarios;
     }
 
     public Double getDeudaPeriodoAnterior() {
@@ -41,4 +44,9 @@ public class UnidadesFuncionales {
     public Double getMetrosCuadrados() {
         return metrosCuadrados;
     }
+
+    public boolean getTieneAlquiler(){
+        return alquilado;
+    }
+
 }

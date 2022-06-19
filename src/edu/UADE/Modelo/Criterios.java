@@ -1,6 +1,8 @@
 package edu.UADE.Modelo;
 
-public class Criterios {
+public abstract class Criterios {
+    private IEstrategiaCriterio estrategiaCriterio;
+
 
     public void obtencionDeSaldo(){
 
@@ -11,6 +13,10 @@ public class Criterios {
     }
 
     public void divisionDeExpensa(){
+
+    }
+
+    public void cambioEstrategiaCriterio(IEstrategiaCriterio estrategiaCriterio){
 
     }
 

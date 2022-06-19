@@ -1,17 +1,17 @@
 package edu.UADE.Modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Consorcio {
     private CuentaBancaria cuentaBancaria;
-    private ArrayList<UnidadesFuncionales> unidadFuncional;
-    private Criterios criterios;
-    private ArrayList<Gasto> gasto;
+    private List<UnidadesFuncionales> unidadFuncional;
+    private List<Gasto> gasto;
 
-    public Consorcio(CuentaBancaria cuentaBancaria, ArrayList<UnidadesFuncionales> unidadFuncional, Criterios criterios, ArrayList<Gasto> gasto) {
+    public Consorcio(CuentaBancaria cuentaBancaria, ArrayList<UnidadesFuncionales> unidadFuncional,
+                     ArrayList<Gasto> gasto) {
         this.cuentaBancaria = cuentaBancaria;
         this.unidadFuncional = unidadFuncional;
-        this.criterios = criterios;
         this.gasto = gasto;
     }
 
@@ -19,8 +19,7 @@ public class Consorcio {
 
     }
 
-    public void cambioCriterio(Criterios criterios){
-
+    public void seleccionarCriterio(Criterios criterios){
     }
 
     public void cargarGasto(Consorcio consorcio, Gasto gasto){

@@ -3,6 +3,7 @@ package edu.UADE.Modelo;
 import java.util.ArrayList;
 
 public class AdministradorDeConsoricio {
+
     private ArrayList<Consorcio> listadoConsorcio;
 
     public AdministradorDeConsoricio(ArrayList<Consorcio> listadoConsorcio) {
@@ -10,6 +11,7 @@ public class AdministradorDeConsoricio {
     }
 
     public void confirmarPagoUnidadFuncional(UnidadesFuncionales unidadesFuncionales){
+
 
     }
 

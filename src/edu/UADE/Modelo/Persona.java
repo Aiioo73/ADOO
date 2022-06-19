@@ -6,7 +6,7 @@ public class Persona {
     private int dni;
     private Domicilio domicilio;
 
-    Persona(String nombre, String apellido, int dni, Domicilio domicilio){
+    public Persona(String nombre, String apellido, int dni, Domicilio domicilio){
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -17,15 +17,31 @@ public class Persona {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getApellido() {
         return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public int getDni() {
         return dni;
     }
 
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
     public Domicilio getDomicilio() {
         return domicilio;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
     }
 }
