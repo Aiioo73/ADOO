@@ -17,7 +17,14 @@ public class Notificaciones {
         return emailDestinatario;
     }
 
-    public Expensa getMensajeExpensa() {
+    public String getMensajeExpensa() {
+        String mensajeExpensa = String.format(
+                "\nDetalle de Expensas:" +
+                "\n- Fecha: %s\n" + "- Valor Ordinario: %s\n" + "- Valor ExtraOrdinario: %s\n",
+                this.mensajeExpensa.getFecha(),
+                this.mensajeExpensa.getValorOrdinario(),
+                this.mensajeExpensa.getValorExtraOrdinario()
+        );
         return mensajeExpensa;
     }
 
