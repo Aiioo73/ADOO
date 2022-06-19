@@ -13,11 +13,11 @@ public abstract class Criterios {
     }
 
     public void divisionDeExpensa(){
-
+        this.estrategiaCriterio.divisionDeExpensas();
     }
 
-    public void cambioEstrategiaCriterio(IEstrategiaCriterio estrategiaCriterio){
-
+    public void cambioEstrategiaCriterio(IEstrategiaCriterio nuevaEstrategiaCriterio){
+        this.estrategiaCriterio = nuevaEstrategiaCriterio;
     }
 
 }

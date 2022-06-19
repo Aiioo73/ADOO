@@ -3,8 +3,8 @@ package edu.UADE.Servicios;
 public class NotificacionesPorMail implements EstrategiaDeNotificacion{
     private AdapterNotificadorMail adapter;
 
-    public NotificacionesPorMail(AdapterNotificadorMail adapter) {
-        this.adapter = adapter;
+    public NotificacionesPorMail() {
+        this.adapter = new AdaptadaMail();
     }
     public void setAdapter(AdapterNotificadorMail newAdapter){
         this.adapter = newAdapter;

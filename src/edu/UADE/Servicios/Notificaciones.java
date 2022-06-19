@@ -5,9 +5,9 @@ import edu.UADE.Modelo.Expensa;
 public class Notificaciones {
     private String emailDestinatario;
     private Expensa mensajeExpensa;
-    private int nroTelefonoDestinatario;
+    private String nroTelefonoDestinatario;
 
-    public Notificaciones(String emailDestinatario, Expensa mensajeExpensa, int nroTelefonoDestinatario) {
+    public Notificaciones(String emailDestinatario, Expensa mensajeExpensa, String nroTelefonoDestinatario) {
         this.emailDestinatario = emailDestinatario;
         this.mensajeExpensa = mensajeExpensa;
         this.nroTelefonoDestinatario = nroTelefonoDestinatario;
@@ -28,7 +28,7 @@ public class Notificaciones {
         return mensajeExpensa;
     }
 
-    public int getNroTelefonoDestinatario() {
+    public String getNroTelefonoDestinatario() {
         return nroTelefonoDestinatario;
     }
 }

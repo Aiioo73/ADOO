@@ -4,8 +4,8 @@ public class NotificacionesPorSMS implements EstrategiaDeNotificacion{
 
     private AdapterNotificadorSMS adapter;
 
-    public NotificacionesPorSMS(AdapterNotificadorSMS adapter) {
-        this.adapter = adapter;
+    public NotificacionesPorSMS() {
+        this.adapter = new AdaptadaSMS();
     }
     public void setAdapter(AdapterNotificadorSMS newAdapter){
         this.adapter = newAdapter;

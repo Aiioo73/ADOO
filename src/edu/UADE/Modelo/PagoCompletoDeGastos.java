@@ -1,6 +1,6 @@
 package edu.UADE.Modelo;
 
-public class PagoCompletoDeGastos implements IEstrategiaCriterio{
+public class PagoCompletoDeGastos extends Criterios implements IEstrategiaCriterio{
 
 
     @Override

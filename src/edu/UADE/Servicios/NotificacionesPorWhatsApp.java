@@ -4,8 +4,8 @@ public class NotificacionesPorWhatsApp implements EstrategiaDeNotificacion{
 
     private AdapterNotificadorWhatsApp adapter;
 
-    public NotificacionesPorWhatsApp(AdapterNotificadorWhatsApp adapter) {
-        this.adapter = adapter;
+    public NotificacionesPorWhatsApp() {
+        this.adapter = new AdaptadaWhatsapp();
     }
     public void setAdapter(AdapterNotificadorWhatsApp newAdapter){
         this.adapter = newAdapter;

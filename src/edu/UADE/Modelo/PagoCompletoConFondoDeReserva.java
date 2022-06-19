@@ -1,7 +1,6 @@
 package edu.UADE.Modelo;
 
-public class PagoCompletoConFondoDeReserva implements IEstrategiaCriterio {
-
+public class PagoCompletoConFondoDeReserva extends Criterios implements IEstrategiaCriterio {
 
     @Override
     public void divisionDeExpensas() {

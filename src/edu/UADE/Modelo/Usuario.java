@@ -1,10 +1,14 @@
 package edu.UADE.Modelo;
+import java.util.List;
 
-public class Usuario extends Persona {
+public class Usuario extends Persona implements Observer{
 
     private String usuario;
     private String password;
     private TipoUsuario tipo;
+    private String email;
+    private String telefono;
+    private List<MedioNotificacion> medios;
     IAdapterOAuth adapter;
 
 
@@ -29,4 +33,32 @@ public class Usuario extends Persona {
         this.password = password;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    @Override
+    public List<MedioNotificacion> getMedioNotificacion() {
+        return medios;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public List<MedioNotificacion> getMedios() {
+        return medios;
+    }
+
+    public void setMedios(List<MedioNotificacion> medios) {
+        this.medios = medios;
+    }
 }
