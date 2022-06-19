@@ -1,24 +1,16 @@
 package edu.UADE.Modelo;
 
 public abstract class Criterios {
-    private IEstrategiaCriterio estrategiaCriterio;
 
-
-    public void obtencionDeSaldo(){
+    public void obtencionDeSaldo(int monto){
 
     }
 
-    public void calculoDeGasto(){
+    public void calculoDeGasto(int monto){
 
     }
 
-    public void divisionDeExpensa(){
-        this.estrategiaCriterio.divisionDeExpensas();
-    }
-
-    public void cambioEstrategiaCriterio(IEstrategiaCriterio nuevaEstrategiaCriterio){
-        this.estrategiaCriterio = nuevaEstrategiaCriterio;
-    }
+    abstract void divisionDeExpensas();
 
 }
 

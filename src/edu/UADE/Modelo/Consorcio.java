@@ -32,7 +32,7 @@ public class Consorcio implements Observable{
             List<MedioNotificacion> medio = current.getMedioNotificacion();
 
             //TODO: CAMBIAR EXPENSA DUMMY POR EXPENSA REAL
-            Expensa expensa = new Expensa(new Date(), 1100,1100);
+            Expensa expensa = new Expensa(new Date(), "asdasd",1100,1100);
 
             Notificaciones notificacion = new Notificaciones(email,expensa,tel);
 
@@ -67,12 +67,12 @@ public class Consorcio implements Observable{
 
     }
 
-    public void seleccionarCriterio(Criterios nuevoCriterio){
+    public void cambiarCriterio(Criterios nuevoCriterio){
         this.criterio = nuevoCriterio;
     }
 
-    public void cargarGasto(Consorcio consorcio, Gasto gasto){
-
+    public void cargarGasto(Gasto gasto){
+        this.gasto.add(gasto);
     }
 
 

@@ -1,6 +1,7 @@
 package edu.UADE.Modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdministradorDeConsoricio {
 
@@ -17,5 +18,13 @@ public class AdministradorDeConsoricio {
 
     public void vencimientoExpensas(){
 
+    }
+
+    public void cargarGasto(Gasto gasto, Consorcio consorcio){
+        if (this.listadoConsorcio.contains(consorcio)) {
+            consorcio.cargarGasto(gasto);
+        }else{
+            System.out.println("El consorcio no te pertenece");
+        }
     }
 }
