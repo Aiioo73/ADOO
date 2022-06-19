@@ -3,24 +3,15 @@ package edu.UADE.Modelo;
 import java.security.cert.Extension;
 
 public class Gasto {
-    private double monto;
     private Expensa tipo;
     private boolean esRecurrente;
     private Consorcio consorcio;
 
-    public Gasto(double monto, Expensa tipo, boolean esRecurrente) {
-
-        this.monto = monto;
+    public Gasto(Expensa tipo, boolean esRecurrente) {
         this.tipo = tipo;
         this.esRecurrente = esRecurrente;
     }
-
-    public double getMonto() {
-        monto= tipo.getTotal();
-        return monto;
-    }
-
-    public void setMonto(double monto) {
-        this.monto = monto;
+    public Double getMonto() {
+        return tipo.getTotal();
     }
 }
