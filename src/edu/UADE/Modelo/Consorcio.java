@@ -20,23 +20,40 @@ public class Consorcio implements Observable{
         this.cuentaBancaria = cuentaBancaria;
         this.unidadFuncional = unidadFuncional;
         this.gasto = gasto;
+        this.observers = new ArrayList<>();
     }
 
+    public void actualizarObservers(){
+        ListIterator<UnidadesFuncionales> itUnidades = unidadFuncional.listIterator();
+        while (itUnidades.hasNext()){
+            UnidadesFuncionales unidadActual = itUnidades.next();
+            System.out.println(unidadActual);
+            List <Usuario>usuarios = unidadActual.usuariosParaNotificar();
+
+            for(Usuario actual: usuarios){
+                if(this.observers.isEmpty() || !this.observers.contains(actual)){
+                    this.agregarObserver(actual);
+                }
+            }
+        }
+    }
     public void notificar(){
-        ListIterator<Observer> it = observers.listIterator();
-        while(it.hasNext()){
-            Observer current = it.next();
+
+
+        this.actualizarObservers();
+
+        ListIterator<Observer> itObserver = observers.listIterator();
+
+        while(itObserver.hasNext()){
+            Observer current = itObserver.next();
 
             String email = current.getEmail();
             String tel = current.getTelefono();
             List<MedioNotificacion> medio = current.getMedioNotificacion();
 
-            //TODO: CAMBIAR EXPENSA DUMMY POR EXPENSA REAL
-            Expensa expensa = new Expensa(new Date(), "asdasd",1100,1100);
+            Notificaciones notificacion = new Notificaciones(email,gasto,tel);
 
-            Notificaciones notificacion = new Notificaciones(email,expensa,tel);
-
-            //TODO: VER SI ES POSIBLE REEMPLAZAR EL SWITCH POR ALGO MAS ELEGANTE
+            //Un usuario puede tener mas de un medio de notificacion pero por defecto se usa el primero de la lista.
             switch(medio.get(0)){
                 case SMS:
                     this.notificationSender.cambiarEstrategiaDeNotificacion(new NotificacionesPorSMS());
@@ -54,13 +71,23 @@ public class Consorcio implements Observable{
     }
 
     @Override
-    public void agregar(Observer observer) {
+    public void agregarObserver(Observer observer) {
         this.observers.add(observer);
     }
 
     @Override
-    public void eliminar(Observer observer) {
+    public void eliminarObserver(Observer observer) {
         this.observers.remove(observer);
+    }
+    public void agregarUnidadFuncional(UnidadesFuncionales uf) {
+        this.unidadFuncional.add(uf);
+    }
+    public void eliminarUnidadFuncional(UnidadesFuncionales uf) {
+        List <Usuario> observersParaEliminar = uf.usuariosParaNotificar();
+        for(Usuario actual: observersParaEliminar){
+            if(!this.observers.isEmpty()){this.observers.remove(actual);}
+        }
+        this.unidadFuncional.remove(uf);
     }
 
     public void calcularExpensasXUnidadFuncional(){

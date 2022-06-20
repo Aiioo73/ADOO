@@ -3,7 +3,8 @@ package edu.UADE.Modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UnidadesFuncionales {
+public class UnidadesFuncionales{
+    private int idUnidad;
     private double porcentajeTotalPagar;
     private TipoUnidad tipoUnidad;
     private ArrayList<Usuario> duenios;
@@ -12,9 +13,9 @@ public class UnidadesFuncionales {
     private Double metrosCuadrados;
     private boolean alquilado;
 
-    public UnidadesFuncionales(TipoUnidad tipoUnidad, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
+    public UnidadesFuncionales(int idUnidad, TipoUnidad tipoUnidad, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
                                double deudaPeriodoAnterior, ArrayList<Usuario> duenios, ArrayList<Usuario> inquilinos) {
-
+        this.idUnidad = idUnidad;
         this.tipoUnidad = tipoUnidad;
         this.porcentajeTotalPagar = porcentajeTotalPagar;
         this.deudaPeriodoAnterior = deudaPeriodoAnterior;
@@ -54,4 +55,22 @@ public class UnidadesFuncionales {
         return alquilado;
     }
 
+    public List<Usuario> usuariosParaNotificar() {
+        List<Usuario> usuarios = new ArrayList<Usuario>(inquilinos);
+        usuarios.addAll(duenios);
+        return usuarios;
+    }
+
+    public void agregarInquilino(Usuario inquilino){
+        this.inquilinos.add(inquilino);
+    }
+    public void agregarDuenio(Usuario duenio){
+        this.duenios.add(duenio);
+    }
+    public void eliminarInquilino(Usuario inquilino){
+        this.inquilinos.remove(inquilino);
+    }
+    public void eliminarDuenio(Usuario duenio){
+        this.duenios.remove(duenio);
+    }
 }

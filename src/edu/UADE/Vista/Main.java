@@ -1,10 +1,17 @@
 package edu.UADE.Vista;
 
 import edu.UADE.Modelo.*;
+import edu.UADE.Servicios.Notificaciones;
+import edu.UADE.Servicios.NotificacionesPorMail;
+import edu.UADE.Servicios.NotificacionesPorSMS;
+import edu.UADE.Servicios.Sender;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static edu.UADE.Modelo.MedioNotificacion.EMAIL;
+import static edu.UADE.Modelo.MedioNotificacion.SMS;
 
 public class Main {
 
@@ -12,12 +19,18 @@ public class Main {
         //Instancio la fecha actual
         Date objDate = new Date();
 
+        List<MedioNotificacion> medios1 = new ArrayList<MedioNotificacion>();
+        List<MedioNotificacion> medios2 = new ArrayList<MedioNotificacion>();
+        medios1.add( SMS );
+        medios2.add( EMAIL );
+
         //Instancio un Administrador de Consorcio
         Domicilio DomicilioAlberto = new Domicilio("Av Libertador", 1234, "CABA", "BS.AS.");
         Usuario userAlberto = new Usuario("Alberto", "Gomez", 12345678, DomicilioAlberto,
-                TipoUsuario.ADMINISTRADORDECONSORCIO);
+                TipoUsuario.ADMINISTRADORDECONSORCIO, "albertogomez@gmail.com", "123456789", medios1);
         userAlberto.setUsuario("albert123");
         userAlberto.setPassword("123abc");
+
 
         //Creo Expensas
         Expensa Luz = new Expensa(objDate, "Luz",1500, 0);
@@ -28,19 +41,18 @@ public class Main {
 
         //Creo usuarios para llenar inquilinos y dueños
         Domicilio domicilioInq1 = new Domicilio("Av Libertador", 1234, "CABA", "BS.AS.");
-        Usuario userInq1 = new Usuario("Alberto", "Gomez", 12345678, domicilioInq1,
-                TipoUsuario.INQUILINO);
+        Usuario userInq1 = new Usuario("Carlos", "Gomez", 12345678, domicilioInq1,
+                TipoUsuario.INQUILINO, "carlitos@gmail.com", "987654321", medios2);
         userAlberto.setUsuario("albert123");
         userAlberto.setPassword("123abc");
-        Usuario userInq2 = new Usuario("Alberto", "Gomez", 12345678, domicilioInq1,
-                TipoUsuario.INQUILINO);
+        Usuario userInq2 = new Usuario("Maria", "Ladelfa", 12345678, domicilioInq1,
+                TipoUsuario.INQUILINO, "maria.ladelfa@hotmail.com", "123789456", medios1);
         userAlberto.setUsuario("albert123");
         userAlberto.setPassword("123abc");
-        Usuario userDue1 = new Usuario("Alberto", "Gomez", 12345678, domicilioInq1,
-                TipoUsuario.DUENO);
+        Usuario userDue1 = new Usuario("Marcos", "Perez", 12345678, domicilioInq1,
+                TipoUsuario.DUENO, "marquitos.perez@outlook.com", "456789123", medios2);
         userAlberto.setUsuario("albert123");
         userAlberto.setPassword("123abc");
-
 
         ArrayList<Usuario> inquilinos = new ArrayList<>();
         inquilinos.add(userInq1);
@@ -51,9 +63,9 @@ public class Main {
 
 
         //Creo Unidades Funcionales
-        UnidadesFuncionales Depto1 = new UnidadesFuncionales(TipoUnidad.departamento, 23.2, false, 20.0, 0.0, inquilinos, duenios);
-        UnidadesFuncionales Depto2 = new UnidadesFuncionales(TipoUnidad.departamento, 38.0, true, 40.0, 1200.0, inquilinos, duenios);
-        UnidadesFuncionales Cochera = new UnidadesFuncionales(TipoUnidad.cochera, 12.6, true, 30.0, 10000.0, inquilinos, duenios);
+        UnidadesFuncionales Depto1 = new UnidadesFuncionales(1, TipoUnidad.departamento, 23.2, false, 20.0, 0.0, inquilinos, duenios);
+        UnidadesFuncionales Depto2 = new UnidadesFuncionales(2, TipoUnidad.departamento, 38.0, true, 40.0, 1200.0, inquilinos, duenios);
+        UnidadesFuncionales Cochera = new UnidadesFuncionales(3, TipoUnidad.cochera, 12.6, true, 30.0, 10000.0, inquilinos, duenios);
 
         //Creo Cuentas Bancarias
         CuentaBancaria CTA0001 = new CuentaBancaria(655232324,"Alberto Gomez",
@@ -82,6 +94,10 @@ public class Main {
         consorcios.add(numero1);
         AdministradorDeConsoricio Alberto = new AdministradorDeConsoricio(consorcios);
 
+        //Agrego Unidades Funcionales a cada consorcio
+        numero1.agregarUnidadFuncional(Depto1);
+        numero1.agregarUnidadFuncional(Depto2);
+        numero1.agregarUnidadFuncional(Cochera);
 
         //REQ1 Cargar Gastos de cada mes por parte del Administrador
         Alberto.cargarGasto(reparacion, numero1);
@@ -96,7 +112,10 @@ public class Main {
 
         //REQ4 Enviar las Expensas a cada interesado según el medio de notificación seleccionado.
         numero1.calcularExpensasXUnidadFuncional();
-
+        //Se llama al metodo notificar del consorcio, que envia el detalle de expensas a los interesados de las unidades funcionales
+        //por los medios que tengan configurados
+        //TODO: Falta agregar en la notificacion el calculo especifico para cada UF una vez que lo tengamos resuelto.
+        numero1.notificar();
 
         System.out.println(Luz.getFecha());
         System.out.println();

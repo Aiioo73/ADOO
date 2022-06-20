@@ -11,7 +11,12 @@ public class Gasto {
         this.tipo = tipo;
         this.esRecurrente = esRecurrente;
     }
+    
     public Double getMonto() {
         return tipo.getTotal();
+    }
+
+    public Expensa getExpensa(){
+        return tipo;
     }
 }

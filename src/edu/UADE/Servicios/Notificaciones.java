@@ -1,15 +1,19 @@
 package edu.UADE.Servicios;
 
 import edu.UADE.Modelo.Expensa;
+import edu.UADE.Modelo.Gasto;
+
+import java.util.Iterator;
+import java.util.List;
 
 public class Notificaciones {
     private String emailDestinatario;
-    private Expensa mensajeExpensa;
+    private List<Gasto> mensajeExpensas;
     private String nroTelefonoDestinatario;
 
-    public Notificaciones(String emailDestinatario, Expensa mensajeExpensa, String nroTelefonoDestinatario) {
+    public Notificaciones(String emailDestinatario, List<Gasto> mensajeExpensas, String nroTelefonoDestinatario) {
         this.emailDestinatario = emailDestinatario;
-        this.mensajeExpensa = mensajeExpensa;
+        this.mensajeExpensas = mensajeExpensas;
         this.nroTelefonoDestinatario = nroTelefonoDestinatario;
     }
 
@@ -18,15 +22,21 @@ public class Notificaciones {
     }
 
     public String getMensajeExpensa() {
-        String mensajeExpensa = String.format(
-                "\nDetalle de Expensas:" +
-                "\n- Fecha: %s\n" + "- Descripcion: %s\n" + "- Valor Ordinario: %s\n" + "- Valor ExtraOrdinario: %s\n",
-                this.mensajeExpensa.getFecha(),
-                this.mensajeExpensa.getDescripcion(),
-                this.mensajeExpensa.getValorOrdinario(),
-                this.mensajeExpensa.getValorExtraOrdinario()
-        );
-        return mensajeExpensa;
+
+        String mensajeParcial = "";
+        Iterator<Gasto> it = mensajeExpensas.listIterator();
+        while(it.hasNext()){
+            Gasto gasto = it.next();
+            Expensa expensaActual = gasto.getExpensa();
+            mensajeParcial = mensajeParcial + String.format(
+                    "\n- Fecha: %s\n- Descripcion: %s\n- Valor Ordinario: %s\n- Valor ExtraOrdinario: %s\n",
+                    expensaActual.getFecha(),
+                    expensaActual.getDescripcion(),
+                    expensaActual.getValorOrdinario(),
+                    expensaActual.getValorExtraOrdinario()
+            );
+        }
+        return String.format("\nDetalle de Expensas: %s", mensajeParcial);
     }
 
     public String getNroTelefonoDestinatario() {

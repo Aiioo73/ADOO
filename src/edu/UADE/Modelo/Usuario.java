@@ -12,9 +12,12 @@ public class Usuario extends Persona implements Observer{
     IAdapterOAuth adapter;
 
 
-    public Usuario(String nombre, String apellido, int dni, Domicilio domicilio, TipoUsuario tipo) {
+    public Usuario(String nombre, String apellido, int dni, Domicilio domicilio, TipoUsuario tipo, String email, String telefono, List<MedioNotificacion>medios) {
         super(nombre, apellido, dni, domicilio);
         this.tipo = tipo;
+        this.email = email;
+        this.telefono = telefono;
+        this.medios = medios;
     }
 
     public String getUsuario() {
@@ -45,7 +48,6 @@ public class Usuario extends Persona implements Observer{
         return telefono;
     }
 
-    @Override
     public List<MedioNotificacion> getMedioNotificacion() {
         return medios;
     }
