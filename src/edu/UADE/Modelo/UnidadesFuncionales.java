@@ -1,21 +1,26 @@
 package edu.UADE.Modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UnidadesFuncionales {
     private double porcentajeTotalPagar;
     private TipoUnidad tipoUnidad;
-    private TipoUsuario tipoUsuario;
+    private ArrayList<Usuario> duenios;
+    private ArrayList<Usuario> inquilinos;
     private Double deudaPeriodoAnterior;
     private Double metrosCuadrados;
     private boolean alquilado;
 
-    public UnidadesFuncionales(TipoUnidad tipoUnidad,TipoUsuario tipoUsuario, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
-                               double deudaPeriodoAnterior) {
+    public UnidadesFuncionales(TipoUnidad tipoUnidad, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
+                               double deudaPeriodoAnterior, ArrayList<Usuario> duenios, ArrayList<Usuario> inquilinos) {
 
         this.tipoUnidad = tipoUnidad;
         this.porcentajeTotalPagar = porcentajeTotalPagar;
         this.deudaPeriodoAnterior = deudaPeriodoAnterior;
-        this.tipoUsuario = TipoUsuario.DUENO;
         this.alquilado = alquilado;
+        this.duenios = duenios;
+        this.inquilinos = inquilinos;
 
     }
 

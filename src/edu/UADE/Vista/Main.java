@@ -25,10 +25,35 @@ public class Main {
         Expensa Calefon = new Expensa(objDate, "Calefon",0, 1200);
         Expensa Reparacion = new Expensa(objDate, "reparacion", 0, 4000);
 
+
+        //Creo usuarios para llenar inquilinos y dueños
+        Domicilio domicilioInq1 = new Domicilio("Av Libertador", 1234, "CABA", "BS.AS.");
+        Usuario userInq1 = new Usuario("Alberto", "Gomez", 12345678, domicilioInq1,
+                TipoUsuario.INQUILINO);
+        userAlberto.setUsuario("albert123");
+        userAlberto.setPassword("123abc");
+        Usuario userInq2 = new Usuario("Alberto", "Gomez", 12345678, domicilioInq1,
+                TipoUsuario.INQUILINO);
+        userAlberto.setUsuario("albert123");
+        userAlberto.setPassword("123abc");
+        Usuario userDue1 = new Usuario("Alberto", "Gomez", 12345678, domicilioInq1,
+                TipoUsuario.DUENO);
+        userAlberto.setUsuario("albert123");
+        userAlberto.setPassword("123abc");
+
+
+        ArrayList<Usuario> inquilinos = new ArrayList<>();
+        inquilinos.add(userInq1);
+        inquilinos.add(userInq2);
+
+        ArrayList<Usuario> duenios = new ArrayList<>();
+        duenios.add(userDue1);
+
+
         //Creo Unidades Funcionales
-        UnidadesFuncionales Depto1 = new UnidadesFuncionales(TipoUnidad.departamento, TipoUsuario.DUENO, 23.2, false, 20.0, 0.0);
-        UnidadesFuncionales Depto2 = new UnidadesFuncionales(TipoUnidad.departamento, TipoUsuario.DUENO, 38.0, true, 40.0, 1200.0);
-        UnidadesFuncionales Cochera = new UnidadesFuncionales(TipoUnidad.cochera, TipoUsuario.DUENO, 12.6, true, 30.0, 10000.0);
+        UnidadesFuncionales Depto1 = new UnidadesFuncionales(TipoUnidad.departamento, 23.2, false, 20.0, 0.0, inquilinos, duenios);
+        UnidadesFuncionales Depto2 = new UnidadesFuncionales(TipoUnidad.departamento, 38.0, true, 40.0, 1200.0, inquilinos, duenios);
+        UnidadesFuncionales Cochera = new UnidadesFuncionales(TipoUnidad.cochera, 12.6, true, 30.0, 10000.0, inquilinos, duenios);
 
         //Creo Cuentas Bancarias
         CuentaBancaria CTA0001 = new CuentaBancaria(655232324,"Alberto Gomez",
@@ -69,8 +94,13 @@ public class Main {
         //TODO diff con el diagrama, ahora los 3 metodos del Criterio reciben un int y devuelven otro
         numero1.calcularExpensasXUnidadFuncional();
 
+        //REQ4 Enviar las Expensas a cada interesado según el medio de notificación seleccionado.
+        numero1.
+
+
         System.out.println(Luz.getFecha());
         System.out.println();
+
 
 
     }
