@@ -95,7 +95,7 @@ public class Main {
         numero1.calcularExpensasXUnidadFuncional();
 
         //REQ4 Enviar las Expensas a cada interesado según el medio de notificación seleccionado.
-        numero1.
+        numero1.calcularExpensasXUnidadFuncional();
 
 
         System.out.println(Luz.getFecha());
