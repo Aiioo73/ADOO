@@ -102,10 +102,10 @@ public class Main {
         numero1.agregarUnidadFuncional(Cochera);
 
         //REQ1 Cargar Gastos de cada mes por parte del Administrador
-        Alberto.cargarGasto(reparacion, numero1);
+        numero1.cargarGasto(reparacion);
 
         //REQ2 Cargar Gastos Recurrentes por parte del Administrador
-        Alberto.cargarGasto(calefon, numero1);
+        numero1.cargarGasto(calefon);
 
         //REQ3 Calcular y Generar las Expensas en Forma Mensual, según el criterio seleccionado.
         numero1.cambiarCriterio(new PagoCompletoDeGastos());
@@ -115,15 +115,12 @@ public class Main {
         numero1.notificar();
 
         //Pago de Deuda de una unidad funcional
-        Alberto.confirmarPagoUnidadFuncional(Depto1, 0.0);
-        Alberto.confirmarPagoUnidadFuncional(Cochera, 1200.0);
+        numero1.confirmarPagoUnidadFuncional(Depto1, 0.0);
+        numero1.confirmarPagoUnidadFuncional(Cochera, 1200.0);
 
         System.out.println("Notificaciones luego de efectuar el pago: \n");
 
         numero1.notificar();
-
-
-
 
     }
 }

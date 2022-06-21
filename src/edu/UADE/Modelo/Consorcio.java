@@ -57,6 +57,11 @@ public class Consorcio implements Observable{
         this.notificationSender.enviar(notificacion);
     }
 
+    public void confirmarPagoUnidadFuncional(UnidadesFuncionales unidadesFuncionales, Double pagoDeuda){
+        unidadesFuncionales.setDeudaPeriodoAnterior(unidadesFuncionales.getDeudaPeriodoAnterior() - pagoDeuda);
+        unidadesFuncionales.setDeudaPeriodoActual(0.0);
+    }
+
     @Override
     public void agregarObserver(Observer observer) {
         this.observers.add(observer);
