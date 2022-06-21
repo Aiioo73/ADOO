@@ -65,9 +65,9 @@ public class Main {
 
 
         //Creo Unidades Funcionales
-        UnidadesFuncionales Depto1 = new UnidadesFuncionales( TipoUnidad.departamento, 23.2, false, 20.0, 0.0, inquilinos1, duenios);
-        UnidadesFuncionales Depto2 = new UnidadesFuncionales( TipoUnidad.departamento, 38.0, true, 40.0, 1200.0, inquilinos2, duenios);
-        UnidadesFuncionales Cochera = new UnidadesFuncionales( TipoUnidad.cochera, 12.6, true, 30.0, 10000.0, inquilinos1, duenios);
+        UnidadesFuncionales Depto1 = new UnidadesFuncionales( TipoUnidad.departamento, 23.2, 20.0, 0.0, inquilinos1, duenios);
+        UnidadesFuncionales Depto2 = new UnidadesFuncionales( TipoUnidad.departamento, 38.0, 40.0, 1200.0, inquilinos2, duenios);
+        UnidadesFuncionales Cochera = new UnidadesFuncionales( TipoUnidad.cochera, 12.6,  30.0, 10000.0, inquilinos1, duenios);
 
         //Creo Cuentas Bancarias
         CuentaBancaria CTA0001 = new CuentaBancaria("655232324","Alberto Gomez",
