@@ -55,6 +55,10 @@ public class UnidadesFuncionales{
         this.deudaPeriodoActual = deudaPeriodoActual;
     }
 
+    public void setDeudaPeriodoAnterior(Double deudaPeriodoAnterior) {
+        this.deudaPeriodoAnterior = deudaPeriodoAnterior;
+    }
+
     public boolean getTieneAlquiler(){
         return alquilado;
     }
