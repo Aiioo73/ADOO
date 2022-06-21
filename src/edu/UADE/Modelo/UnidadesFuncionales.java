@@ -14,8 +14,9 @@ public class UnidadesFuncionales{
     private Double metrosCuadrados;
     private boolean alquilado;
 
-    public UnidadesFuncionales(TipoUnidad tipoUnidad, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
+    public UnidadesFuncionales(int idUnidad,TipoUnidad tipoUnidad, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
                                double deudaPeriodoAnterior, ArrayList<Usuario> duenios, ArrayList<Usuario> inquilinos) {
+        this.idUnidad = idUnidad;
         this.tipoUnidad = tipoUnidad;
         this.metrosCuadrados = metrosCuadrados;
         this.porcentajeTotalPagar = porcentajeTotalPagar;
@@ -81,5 +82,9 @@ public class UnidadesFuncionales{
     }
     public void eliminarDuenio(Usuario duenio){
         this.duenios.remove(duenio);
+    }
+
+    public int getId() {
+        return this.idUnidad;
     }
 }

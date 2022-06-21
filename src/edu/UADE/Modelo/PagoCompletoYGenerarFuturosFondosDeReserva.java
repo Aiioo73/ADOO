@@ -10,7 +10,7 @@ public class PagoCompletoYGenerarFuturosFondosDeReserva extends Criterios{
         int cantUnidades = unidades.size();
         int metrosTotales = 0;
         //Agrego 0.1 como futuros fondos de reserva
-        double totalGastosYReservas = totalGastos * 0.1;
+        double totalGastosYReservas = totalGastos * 1.1;
         for (int i = 0; i < cantUnidades; i++) {
             metrosTotales += unidades.get(i).getMetrosCuadrados();
         }

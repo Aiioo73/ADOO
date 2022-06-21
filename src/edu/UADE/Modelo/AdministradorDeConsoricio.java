@@ -11,9 +11,9 @@ public class AdministradorDeConsoricio {
         this.listadoConsorcio = listadoConsorcio;
     }
 
-    public void confirmarPagoUnidadFuncional(UnidadesFuncionales unidadesFuncionales){
-
-
+    public void confirmarPagoUnidadFuncional(UnidadesFuncionales unidadesFuncionales, Double pagoDeuda){
+        unidadesFuncionales.setDeudaPeriodoAnterior(unidadesFuncionales.getDeudaPeriodoAnterior() - pagoDeuda);
+        unidadesFuncionales.setDeudaPeriodoActual(0.0);
     }
 
     public void vencimientoExpensas(){

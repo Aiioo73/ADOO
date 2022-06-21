@@ -31,13 +31,12 @@ public class Consorcio implements Observable{
             for (Observer actual : usuarios) {
                 if (this.observers.isEmpty() || !this.observers.contains(actual)) {
                     this.agregarObserver(actual);
-
-                    String email = actual.getEmail();
-                    String tel = actual.getTelefono();
-                    List<MedioNotificacion> medio = actual.getMedioNotificacion();
-                    notificacion = new Notificaciones(email, unidadActual.getDeudaPeriodoActual(), tel);
-                    this.enviarNotificacionSegunEstrategia(notificacion, medio);
                 }
+                String email = actual.getEmail();
+                String tel = actual.getTelefono();
+                List<MedioNotificacion> medio = actual.getMedioNotificacion();
+                notificacion = new Notificaciones(email, unidadActual.getId() , unidadActual.getDeudaPeriodoActual(), unidadActual.getDeudaPeriodoAnterior(), tel);
+                this.enviarNotificacionSegunEstrategia(notificacion, medio);
             }
         }
     }
@@ -78,15 +77,17 @@ public class Consorcio implements Observable{
         this.unidadFuncional.remove(uf);
     }
 
-    public double calcularGastosTotales(){
-        return this.criterio.calculoDeGasto(this.gasto);
-    }
-
-    public double obtenerSaldoCuentaBancaria(){
-        return this.criterio.obtencionDeSaldo(this.cuentaBancaria.getCbu(), this.cuentaBancaria.getAlias(), this.cuentaBancaria.getFechaSaldo());
-    }
     public void calcularExpensasXUnidadFuncional(){
-        Double gastosTotales = this.calcularGastosTotales();
+        Double gastosTotales = this.criterio.calculoDeGasto(this.gasto);
+
+        if(this.criterio instanceof PagoCompletoConFondoDeReserva){
+            Double saldoCuentaBancaria = this.criterio.obtencionDeSaldo(this.cuentaBancaria.getCbu(), this.cuentaBancaria.getAlias(), this.cuentaBancaria.getFechaSaldo());
+            if (saldoCuentaBancaria < gastosTotales){
+                System.out.println("El saldo en la cuenta bancaria del consorcio no cubre el total de los gastos");
+                System.exit(1);
+            }
+        }
+
         this.criterio.divisionDeExpensas(unidadFuncional, gastosTotales);
     }
 
