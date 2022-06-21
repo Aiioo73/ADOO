@@ -49,23 +49,25 @@ public class Main {
                 TipoUsuario.INQUILINO, "maria.ladelfa@hotmail.com", "123789456", medios1);
         userAlberto.setUsuario("albert123");
         userAlberto.setPassword("123abc");
+
         Usuario userDue1 = new Usuario("Marcos", "Perez", 12345678, domicilioInq1,
                 TipoUsuario.DUENO, "marquitos.perez@outlook.com", "456789123", medios2);
         userAlberto.setUsuario("albert123");
         userAlberto.setPassword("123abc");
 
-        ArrayList<Usuario> inquilinos = new ArrayList<>();
-        inquilinos.add(userInq1);
-        inquilinos.add(userInq2);
+        ArrayList<Usuario> inquilinos1 = new ArrayList<>();
+        ArrayList<Usuario> inquilinos2 = new ArrayList<>();
+        inquilinos1.add(userInq1);
+        inquilinos2.add(userInq2);
 
         ArrayList<Usuario> duenios = new ArrayList<>();
         duenios.add(userDue1);
 
 
         //Creo Unidades Funcionales
-        UnidadesFuncionales Depto1 = new UnidadesFuncionales( TipoUnidad.departamento, 23.2, false, 20.0, 0.0, inquilinos, duenios);
-        UnidadesFuncionales Depto2 = new UnidadesFuncionales( TipoUnidad.departamento, 38.0, true, 40.0, 1200.0, inquilinos, duenios);
-        UnidadesFuncionales Cochera = new UnidadesFuncionales( TipoUnidad.cochera, 12.6, true, 30.0, 10000.0, inquilinos, duenios);
+        UnidadesFuncionales Depto1 = new UnidadesFuncionales( TipoUnidad.departamento, 23.2, false, 20.0, 0.0, inquilinos1, duenios);
+        UnidadesFuncionales Depto2 = new UnidadesFuncionales( TipoUnidad.departamento, 38.0, true, 40.0, 1200.0, inquilinos2, duenios);
+        UnidadesFuncionales Cochera = new UnidadesFuncionales( TipoUnidad.cochera, 12.6, true, 30.0, 10000.0, inquilinos1, duenios);
 
         //Creo Cuentas Bancarias
         CuentaBancaria CTA0001 = new CuentaBancaria("655232324","Alberto Gomez",
@@ -108,8 +110,8 @@ public class Main {
         //REQ3 Calcular y Generar las Expensas en Forma Mensual, según el criterio seleccionado.
         //TODO check si queda devolviendo el map<unidadFuncional,totalExpensa>
         //TODO diff con el diagrama, ahora los 3 metodos del Criterio reciben un int y devuelven otro
-        numero1.calcularExpensasXUnidadFuncional();
 
+        numero1.cambiarCriterio(new PagoCompletoDeGastos());
         //REQ4 Enviar las Expensas a cada interesado según el medio de notificación seleccionado.
         numero1.calcularExpensasXUnidadFuncional();
         //Se llama al metodo notificar del consorcio, que envia el detalle de expensas a los interesados de las unidades funcionales
@@ -120,9 +122,6 @@ public class Main {
         //Calculo de Gastos del consorcio
         //Prueba, Borrar!!
         System.out.println(numero1.calcularGastosTotales());
-
-        System.out.println(Luz.getFecha());
-        System.out.println();
 
 
 

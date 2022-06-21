@@ -17,6 +17,7 @@ public class UnidadesFuncionales{
     public UnidadesFuncionales(TipoUnidad tipoUnidad, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
                                double deudaPeriodoAnterior, ArrayList<Usuario> duenios, ArrayList<Usuario> inquilinos) {
         this.tipoUnidad = tipoUnidad;
+        this.metrosCuadrados = metrosCuadrados;
         this.porcentajeTotalPagar = porcentajeTotalPagar;
         this.deudaPeriodoAnterior = deudaPeriodoAnterior;
         this.alquilado = alquilado;
@@ -32,23 +33,23 @@ public class UnidadesFuncionales{
     }
 
     public double getPorcentajeTotalPagar() {
-        return porcentajeTotalPagar;
+        return this.porcentajeTotalPagar;
     }
 
     public Double getDeudaPeriodoAnterior() {
-        return deudaPeriodoAnterior;
+        return this.deudaPeriodoAnterior;
     }
 
     public TipoUnidad getTipoUnidad() {
-        return tipoUnidad;
+        return this.tipoUnidad;
     }
 
     public Double getMetrosCuadrados() {
-        return metrosCuadrados;
+        return this.metrosCuadrados;
     }
 
     public Double getDeudaPeriodoActual() {
-        return deudaPeriodoActual;
+        return this.deudaPeriodoActual;
     }
 
     public void setDeudaPeriodoActual(Double deudaPeriodoActual) {

@@ -25,13 +25,9 @@ public class Consorcio implements Observable{
 
     public void notificar() {
 
-        ListIterator<UnidadesFuncionales> itUnidades = unidadFuncional.listIterator();
-
         Notificaciones notificacion;
-        while (itUnidades.hasNext()) {
-            UnidadesFuncionales unidadActual = itUnidades.next();
+        for (UnidadesFuncionales unidadActual: unidadFuncional) {
             List<Observer> usuarios = unidadActual.usuariosParaNotificar();
-
             for (Observer actual : usuarios) {
                 if (this.observers.isEmpty() || !this.observers.contains(actual)) {
                     this.agregarObserver(actual);
@@ -90,9 +86,8 @@ public class Consorcio implements Observable{
         return this.criterio.obtencionDeSaldo(this.cuentaBancaria.getCbu(), this.cuentaBancaria.getAlias(), this.cuentaBancaria.getFechaSaldo());
     }
     public void calcularExpensasXUnidadFuncional(){
-        Double gasto = this.calcularGastosTotales();
-
-
+        Double gastosTotales = this.calcularGastosTotales();
+        this.criterio.divisionDeExpensas(unidadFuncional, gastosTotales);
     }
 
     public void cambiarCriterio(Criterios nuevoCriterio){
