@@ -8,10 +8,10 @@ import java.util.List;
 
 public class Notificaciones {
     private String emailDestinatario;
-    private List<Gasto> mensajeExpensas;
+    private Double mensajeExpensas;
     private String nroTelefonoDestinatario;
 
-    public Notificaciones(String emailDestinatario, List<Gasto> mensajeExpensas, String nroTelefonoDestinatario) {
+    public Notificaciones(String emailDestinatario, Double mensajeExpensas, String nroTelefonoDestinatario) {
         this.emailDestinatario = emailDestinatario;
         this.mensajeExpensas = mensajeExpensas;
         this.nroTelefonoDestinatario = nroTelefonoDestinatario;
@@ -22,21 +22,7 @@ public class Notificaciones {
     }
 
     public String getMensajeExpensa() {
-
-        String mensajeParcial = "";
-        Iterator<Gasto> it = mensajeExpensas.listIterator();
-        while(it.hasNext()){
-            Gasto gasto = it.next();
-            Expensa expensaActual = gasto.getExpensa();
-            mensajeParcial = mensajeParcial + String.format(
-                    "\n- Fecha: %s\n- Descripcion: %s\n- Valor Ordinario: %s\n- Valor ExtraOrdinario: %s\n",
-                    expensaActual.getFecha(),
-                    expensaActual.getDescripcion(),
-                    expensaActual.getValorOrdinario(),
-                    expensaActual.getValorExtraOrdinario()
-            );
-        }
-        return String.format("\nDetalle de Expensas: %s", mensajeParcial);
+        return String.format("\n- Los gastos del corriente perido para su Unidad Funcional son de: %s", this.mensajeExpensas);
     }
 
     public String getNroTelefonoDestinatario() {

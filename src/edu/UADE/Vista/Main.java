@@ -118,6 +118,7 @@ public class Main {
         numero1.notificar();
 
         //Calculo de Gastos del consorcio
+        //Prueba, Borrar!!
         System.out.println(numero1.calcularGastosTotales());
 
         System.out.println(Luz.getFecha());
