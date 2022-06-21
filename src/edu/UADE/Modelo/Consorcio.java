@@ -90,7 +90,16 @@ public class Consorcio implements Observable{
         this.unidadFuncional.remove(uf);
     }
 
+    public double calcularGastosTotales(){
+        return this.criterio.calculoDeGasto(this.gasto);
+    }
+
+    public double obtenerSaldoCuentaBancaria(){
+        return this.criterio.obtencionDeSaldo(this.cuentaBancaria.getCbu(), this.cuentaBancaria.getAlias(), this.cuentaBancaria.getFechaSaldo());
+    }
     public void calcularExpensasXUnidadFuncional(){
+        Double gasto = this.calcularGastosTotales();
+
 
     }
 

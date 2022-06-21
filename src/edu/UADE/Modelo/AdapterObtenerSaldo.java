@@ -4,6 +4,6 @@ import java.util.Date;
 
 public interface AdapterObtenerSaldo {
 
-   double calcularSaldoActual(int cbu, String alias, Date fechaSaldo);
+   double calcularSaldoActual(String cbu, String alias, Date fechaSaldo);
 
 }

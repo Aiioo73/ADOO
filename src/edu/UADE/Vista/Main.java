@@ -63,14 +63,14 @@ public class Main {
 
 
         //Creo Unidades Funcionales
-        UnidadesFuncionales Depto1 = new UnidadesFuncionales(1, TipoUnidad.departamento, 23.2, false, 20.0, 0.0, inquilinos, duenios);
-        UnidadesFuncionales Depto2 = new UnidadesFuncionales(2, TipoUnidad.departamento, 38.0, true, 40.0, 1200.0, inquilinos, duenios);
-        UnidadesFuncionales Cochera = new UnidadesFuncionales(3, TipoUnidad.cochera, 12.6, true, 30.0, 10000.0, inquilinos, duenios);
+        UnidadesFuncionales Depto1 = new UnidadesFuncionales( TipoUnidad.departamento, 23.2, false, 20.0, 0.0, inquilinos, duenios);
+        UnidadesFuncionales Depto2 = new UnidadesFuncionales( TipoUnidad.departamento, 38.0, true, 40.0, 1200.0, inquilinos, duenios);
+        UnidadesFuncionales Cochera = new UnidadesFuncionales( TipoUnidad.cochera, 12.6, true, 30.0, 10000.0, inquilinos, duenios);
 
         //Creo Cuentas Bancarias
-        CuentaBancaria CTA0001 = new CuentaBancaria(655232324,"Alberto Gomez",
+        CuentaBancaria CTA0001 = new CuentaBancaria("655232324","Alberto Gomez",
                 209877662,98020,"albert123Galicia",objDate);
-        CuentaBancaria CTA0002 = new CuentaBancaria(755232324,"Susana Gimenez",
+        CuentaBancaria CTA0002 = new CuentaBancaria("755232324","Susana Gimenez",
                 309877662,128020,"HolaSusana",objDate);
 
         //Creo Gastos
@@ -116,6 +116,9 @@ public class Main {
         //por los medios que tengan configurados
         //TODO: Falta agregar en la notificacion el calculo especifico para cada UF una vez que lo tengamos resuelto.
         numero1.notificar();
+
+        //Calculo de Gastos del consorcio
+        System.out.println(numero1.calcularGastosTotales());
 
         System.out.println(Luz.getFecha());
         System.out.println();

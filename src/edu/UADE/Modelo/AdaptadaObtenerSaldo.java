@@ -6,8 +6,8 @@ public class AdaptadaObtenerSaldo implements AdapterObtenerSaldo {
     private String tokenSeguridad;
 
     @Override
-    public double calcularSaldoActual(int cbu, String alias, Date fechaSaldo) {
-        return 0;
+    public double calcularSaldoActual(String cbu, String alias, Date fechaSaldo) {
+        return 10000;
     }
 }
 

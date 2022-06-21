@@ -10,12 +10,12 @@ public class UnidadesFuncionales{
     private ArrayList<Usuario> duenios;
     private ArrayList<Usuario> inquilinos;
     private Double deudaPeriodoAnterior;
+    private Double deudaPeriodoActual = 0.0;
     private Double metrosCuadrados;
     private boolean alquilado;
 
-    public UnidadesFuncionales(int idUnidad, TipoUnidad tipoUnidad, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
+    public UnidadesFuncionales(TipoUnidad tipoUnidad, double metrosCuadrados,boolean alquilado, double porcentajeTotalPagar,
                                double deudaPeriodoAnterior, ArrayList<Usuario> duenios, ArrayList<Usuario> inquilinos) {
-        this.idUnidad = idUnidad;
         this.tipoUnidad = tipoUnidad;
         this.porcentajeTotalPagar = porcentajeTotalPagar;
         this.deudaPeriodoAnterior = deudaPeriodoAnterior;
@@ -29,10 +29,6 @@ public class UnidadesFuncionales{
         if (alquilado == true){
             TipoUsuario inquilino = TipoUsuario.INQUILINO;
         }
-    }
-
-    public void calcularMetrosCuadrados(){
-
     }
 
     public double getPorcentajeTotalPagar() {
@@ -49,6 +45,14 @@ public class UnidadesFuncionales{
 
     public Double getMetrosCuadrados() {
         return metrosCuadrados;
+    }
+
+    public Double getDeudaPeriodoActual() {
+        return deudaPeriodoActual;
+    }
+
+    public void setDeudaPeriodoActual(Double deudaPeriodoActual) {
+        this.deudaPeriodoActual = deudaPeriodoActual;
     }
 
     public boolean getTieneAlquiler(){
