@@ -4658,7 +4658,7 @@
 											"top": 1776,
 											"width": 524.9892578125,
 											"height": 13,
-											"text": "+tokenSeguridad: String",
+											"text": "-tokenSeguridad: String",
 											"horizontalAlignment": 0
 										}
 									],
@@ -5969,7 +5969,7 @@
 											"top": 678,
 											"width": 186.08154296875,
 											"height": 13,
-											"text": "+emailDestinatiario: String",
+											"text": "-emailDestinatiario: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6004,7 +6004,7 @@
 											"top": 693,
 											"width": 186.08154296875,
 											"height": 13,
-											"text": "+mensajeExpensa: Expensa",
+											"text": "-mensajeExpensa: Double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6021,7 +6021,24 @@
 											"top": 708,
 											"width": 186.08154296875,
 											"height": 13,
-											"text": "+nroTelefonoDestinatario: int",
+											"text": "-nroTelefonoDestinatario: int",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGBiB2jDt0HzYw=",
+											"_parent": {
+												"$ref": "AAAAAAGAjHAppnYANYg="
+											},
+											"model": {
+												"$ref": "AAAAAAGBiB2i8Nz11Z0="
+											},
+											"font": "Arial;13;0",
+											"left": 1581,
+											"top": 723,
+											"width": 186.08154296875,
+											"height": 13,
+											"text": "-deudaAnterior: Double",
 											"horizontalAlignment": 0
 										}
 									],
@@ -6029,7 +6046,7 @@
 									"left": 1576,
 									"top": 673,
 									"width": 196.08154296875,
-									"height": 53
+									"height": 68
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -6040,11 +6057,47 @@
 									"model": {
 										"$ref": "AAAAAAGAjHAppXX4oVg="
 									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGBiB5ZVOKL1Pk=",
+											"_parent": {
+												"$ref": "AAAAAAGAjHAppnYBmyc="
+											},
+											"model": {
+												"$ref": "AAAAAAGBiB5ZO+J5Iiw="
+											},
+											"font": "Arial;13;0",
+											"left": 1581,
+											"top": 746,
+											"width": 186.08154296875,
+											"height": 13,
+											"text": "+getEmailDestinatario(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGBiB6z6Od1LzY=",
+											"_parent": {
+												"$ref": "AAAAAAGAjHAppnYBmyc="
+											},
+											"model": {
+												"$ref": "AAAAAAGBiB6z2+djwgA="
+											},
+											"font": "Arial;13;0",
+											"left": 1581,
+											"top": 761,
+											"width": 186.08154296875,
+											"height": 13,
+											"text": "+getMensajeExpensa(): String",
+											"horizontalAlignment": 0
+										}
+									],
 									"font": "Arial;13;0",
 									"left": 1576,
-									"top": 726,
+									"top": 741,
 									"width": 196.08154296875,
-									"height": 10
+									"height": 38
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -6084,7 +6137,7 @@
 							"left": 1576,
 							"top": 648,
 							"width": 196.08154296875,
-							"height": 88,
+							"height": 131,
 							"nameCompartment": {
 								"$ref": "AAAAAAGAjHAppnX7uAs="
 							},
@@ -6216,7 +6269,7 @@
 											"top": 422,
 											"width": 476.53759765625,
 											"height": 13,
-											"text": "+estrategiaDeNotificacion: EstrategiaDeNotificacion",
+											"text": "-estrategiaDeNotificacion: EstrategiaDeNotificacion",
 											"horizontalAlignment": 0
 										}
 									],
@@ -6353,7 +6406,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1719,
+									"left": 1722,
 									"top": 559,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -6374,8 +6427,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 1734,
-									"top": 563,
+									"left": 1737,
+									"top": 562,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -6395,7 +6448,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1690,
+									"left": 1693,
 									"top": 552,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -6414,7 +6467,7 @@
 								"$ref": "AAAAAAGAjHG/ioRBJdM="
 							},
 							"lineStyle": 1,
-							"points": "1727:478;1684:647",
+							"points": "1728:478;1688:647",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGAjHQ/VoUTdPE="
@@ -6741,7 +6794,7 @@
 											"top": 622,
 											"width": 235.9169921875,
 											"height": 13,
-											"text": "+adapter: adapterNotificadorMail",
+											"text": "-adapter: adapterNotificadorMail",
 											"horizontalAlignment": 0
 										}
 									],
@@ -6955,7 +7008,7 @@
 											"top": 782,
 											"width": 235.9169921875,
 											"height": 13,
-											"text": "+adapter: adapterNotificadorWhatsApp",
+											"text": "-adapter: adapterNotificadorWhatsApp",
 											"horizontalAlignment": 0
 										}
 									],
@@ -7169,7 +7222,7 @@
 											"top": 934,
 											"width": 235.9169921875,
 											"height": 13,
-											"text": "+adapter: adapterNotificadorSMS",
+											"text": "-adapter: adapterNotificadorSMS",
 											"horizontalAlignment": 0
 										}
 									],
@@ -18890,6 +18943,7 @@
 								"$ref": "AAAAAAGAjFWU8LBgQM8="
 							},
 							"name": "tokenSeguridad",
+							"visibility": "private",
 							"type": "String"
 						}
 					],
@@ -19127,6 +19181,7 @@
 								"$ref": "AAAAAAGAjHAppXX4oVg="
 							},
 							"name": "emailDestinatiario",
+							"visibility": "private",
 							"type": "String"
 						},
 						{
@@ -19145,9 +19200,8 @@
 								"$ref": "AAAAAAGAjHAppXX4oVg="
 							},
 							"name": "mensajeExpensa",
-							"type": {
-								"$ref": "AAAAAAGAjG0QhGVIAMM="
-							}
+							"visibility": "private",
+							"type": "Double"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -19156,7 +19210,58 @@
 								"$ref": "AAAAAAGAjHAppXX4oVg="
 							},
 							"name": "nroTelefonoDestinatario",
+							"visibility": "private",
 							"type": "int"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGBiB2i8Nz11Z0=",
+							"_parent": {
+								"$ref": "AAAAAAGAjHAppXX4oVg="
+							},
+							"name": "deudaAnterior",
+							"visibility": "private",
+							"type": "Double"
+						}
+					],
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGBiB5ZO+J5Iiw=",
+							"_parent": {
+								"$ref": "AAAAAAGAjHAppXX4oVg="
+							},
+							"name": "getEmailDestinatario",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGBiB6OsuWNFmo=",
+									"_parent": {
+										"$ref": "AAAAAAGBiB5ZO+J5Iiw="
+									},
+									"type": "String",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGBiB6z2+djwgA=",
+							"_parent": {
+								"$ref": "AAAAAAGAjHAppXX4oVg="
+							},
+							"name": "getMensajeExpensa",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGBiB7LIOjw6wI=",
+									"_parent": {
+										"$ref": "AAAAAAGBiB6z2+djwgA="
+									},
+									"type": "String",
+									"direction": "return"
+								}
+							]
 						}
 					]
 				},
@@ -19218,6 +19323,7 @@
 								"$ref": "AAAAAAGAjHG/ioQ/lm4="
 							},
 							"name": "estrategiaDeNotificacion",
+							"visibility": "private",
 							"type": "EstrategiaDeNotificacion"
 						}
 					],
@@ -19450,6 +19556,7 @@
 								"$ref": "AAAAAAGAjHcSR7oeLis="
 							},
 							"name": "adapter",
+							"visibility": "private",
 							"type": "adapterNotificadorMail"
 						}
 					],
@@ -19531,6 +19638,7 @@
 								"$ref": "AAAAAAGAjHdfWLyjY9g="
 							},
 							"name": "adapter",
+							"visibility": "private",
 							"type": "adapterNotificadorWhatsApp"
 						}
 					],
@@ -19612,6 +19720,7 @@
 								"$ref": "AAAAAAGAjHeRCb5mp7o="
 							},
 							"name": "adapter",
+							"visibility": "private",
 							"type": "adapterNotificadorSMS"
 						}
 					],
