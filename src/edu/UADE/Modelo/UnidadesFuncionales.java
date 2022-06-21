@@ -59,8 +59,8 @@ public class UnidadesFuncionales{
         return alquilado;
     }
 
-    public List<Usuario> usuariosParaNotificar() {
-        List<Usuario> usuarios = new ArrayList<Usuario>(inquilinos);
+    public List<Observer> usuariosParaNotificar() {
+        List<Observer> usuarios = new ArrayList<Observer>(inquilinos);
         usuarios.addAll(duenios);
         return usuarios;
     }
